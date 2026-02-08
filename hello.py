@@ -6,4 +6,9 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(json.dumps({"message": "Hello from Python on Vercel!"}).encode())
+        response = {
+            "message": "Hello from Matthew in Des Moines! 🚀",
+            "time": "It's around 11 PM CST on Feb 7, 2026",
+            "from": "Your Vercel Python test"
+        }
+        self.wfile.write(json.dumps(response).encode('utf-8'))
